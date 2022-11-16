@@ -1,7 +1,4 @@
 from business_logic.expenses import add_expense
-from db_tables.db_work import select_db
-from db_tables.models import Expenses_needs, Aliases
-
 
 def start(update, context):
     update.message.reply_text(

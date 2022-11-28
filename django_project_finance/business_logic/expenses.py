@@ -1,7 +1,6 @@
 """ Работа с расходами — их добавление, удаление, статистики"""
 from business_logic.categories import Categories
 from business_logic.parce import Parse_message
-from db_tables.db_work import ilnsert_db
 
 
 def add_expense(text):
@@ -12,9 +11,9 @@ def add_expense(text):
 
     category_db = Categories()
     category_db.load_categories()  # TODO передать в метод ->get_category
-    category_db.get_category(message_t.list_parse)
+    category_db.get_category_expense(message_t.list_parse)
 
-    insert_db_message = ilnsert_db(
+    insert_db_message = insert_db_expenses_needs(
         codename=category_db.codename_category_aliases[0].get_codename,
         category=category_db.codename_category_aliases[0].get_category,
         aliases=category_db.codename_category_aliases[0].get_alias,

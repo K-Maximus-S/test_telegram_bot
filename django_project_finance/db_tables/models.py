@@ -27,3 +27,20 @@ class Aliases(models.Model):
 
     # def __str__(self):
     #     return self.list_of_words
+
+class User_verification(models.Model):
+    """Таблица Аутентификации пользователя"""
+
+    id = models.BigAutoField(primary_key=True)
+    user_id = models.CharField(max_length=50, verbose_name='ID пользователя из телеграма')
+    activating_bot = models.CharField(max_length=50, verbose_name='Активация бота: True - есть цели, False - нет целей')
+
+class Purposes(models.Model):
+    """Таблица целей"""
+    id = models.BigAutoField(primary_key=True)
+    id_user_tg = models.CharField(max_length=15, verbose_name='id пользователя телеграм')
+    codename = models.CharField(max_length=50, verbose_name='Название раздела (Потребности|Инвестиции|Желания')
+    category = models.CharField(max_length=50, verbose_name='Название категории (еда,жилье,тс, итд')
+    aliases = models.CharField(max_length=50, verbose_name='Название алиаса (магазин:продукты:итд')
+    price = models.IntegerField(verbose_name='Цена')
+    data = models.CharField(max_length=15, verbose_name='Дата')

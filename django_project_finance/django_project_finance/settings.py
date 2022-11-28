@@ -70,16 +70,16 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "django_project_finance.wsgi.application"
-TOKEN_TELEGRAM_BOT_API = ''
+TOKEN_TELEGRAM_BOT_API = '5641187979:AAE-KCzCaCWiylBKitx1pLhwkKYxEqp_G9Q'
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': '',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': ''
+        'NAME': 'db_finance',
+        'USER': 'postgres',
+        'PASSWORD': '12345',
+        'HOST': '127.0.0.1',
+        'PORT': '5432'
     }
 }
 
